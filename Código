@@ -1,0 +1,7 @@
+const signature = Gmail.Users.Settings.SendAs.list("me").sendAs.filter(function (account) { if (account.isDefault) { return true } })[0].signature;
+
+          GmailApp.sendEmail(email, subject, "", {
+            name: nome,
+            noReply: true,
+            htmlBody: message + signature
+          });
